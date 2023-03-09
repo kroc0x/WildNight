@@ -1,0 +1,16 @@
+---------------------------------------------------------------------------------------------------
+Version: 0.5.3
+Date: 2023-03-08
+  Bugfixes:
+    - Fix the bug that settings does not take effect. Use Rampant's setting
+	instead.
+---------------------------------------------------------------------------------------------------
+Version: 0.5.2
+Date: 2023-03-08
+  Bugfixes:
+    - Fix a potential bug if working with mutliple surface mods
+---------------------------------------------------------------------------------------------------
+Version: 0.5.1
+Date: 2023-03-08
+  Features:
+    - Added text of current mode after victory
