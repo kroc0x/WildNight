@@ -6,7 +6,6 @@ local ai = require("scripts.ai")
 local victory = require("scripts.victory")
 
 
-
 script.on_init(function(event)
     ai.init()
     night.init()
@@ -17,6 +16,45 @@ script.on_event(defines.events.on_player_created, function(event)
   clock.init_gui(player)
   night.setsettings()
   ai_test.init_gui(player)
+
+  local mode =""
+  local mode_str = ""
+  if settings.startup["wn-hard"].value == true then
+     global.ai.hard = true
+     mode = mode .. "H"
+     mode_str = "Hard "
+  else
+     global.ai.hard = false
+  end
+
+  if settings.startup["rampantFixed--nuclearEnemy"].value == true then
+        mode = mode .. "N"
+     global.ai.nuclear = true
+     mode_str = mode_str .. "Nuclear "
+  end
+  if settings.startup["rampantFixed--poisonEnemy"].value == true then
+     global.ai.poison = true
+     mode = mode .. "P"
+     -- player.print("<WildNight>: Poison Enemy is ON.")
+     mode_str = mode_str .. "Poison "
+  end
+  if settings.startup["rampantFixed--infernoEnemy"].value == true then
+     global.ai.inferno = true
+     mode = mode .. "I"
+     mode_str = mode_str .. "Inferno "
+  end
+
+  if settings.startup["rampantFixed--unitBiterHealthScaler"].value == 3.0 then
+     global.ai.hp_x3 = true
+     mode = mode .. "3"
+     mode_str = mode_str .. "HPx3 "
+  end
+
+  global.ai.mode = "[" .. mode .. "]"
+  global.ai.mode_str = mode_str
+  player.print("<WildNight>: " .. mode_str .. "is ON.")
+
+
 end)
 script.on_nth_tick(60, function()
   for _, player in pairs(game.players) do
@@ -33,8 +71,15 @@ script.on_nth_tick(60*15, function()
     if new_night_count then
         ai.increase_squad_size()
     end
+
+    if global.easy_pickup.has_given == false  and game.tick > 60 * 10 then
+        player.print("<WildNight>: Several defender capsule was send, Take Care.")
+        player.insert({name = "defender-capsule", count = 20})
+        global.easy_pickup.has_given = true
+    end
+
     local is_new_day = night.check_day_coming(player)
-    if is_new_day then
+    if is_new_day and not global.ai.is_peacemode then
         if global.ai.hard then
             remote.call("rampantFixed", "setAI_state_ExtCtrl", {surfaceIndex = player.surface.index, state = 5})
         end
@@ -50,7 +95,6 @@ script.on_nth_tick(60*60*5, function()
   end
 end)
 
-
 -- IN ROCKET MODE,
 -- player first in lobby surfcae
 -- then in nauvis surface
@@ -64,6 +108,7 @@ script.on_event(defines.events.on_player_changed_surface, function(event)
             player.gui.screen.wn_easy_pickup_button.destroy()
             global.easy_pickup.has_picked = true
         end
+
     end
 end)
 script.on_event(defines.events.on_gui_click, function(event)
@@ -96,6 +141,7 @@ commands.add_command("wn_debug", nil, function(command)
     if player.admin then
         if command.parameter == '0' then
             ai_test.hide_gui(player)
+            -- victory.show_victory_gui(player)
         else
             ai_test.show_gui(player)
         end
@@ -103,4 +149,3 @@ commands.add_command("wn_debug", nil, function(command)
         player.print({ "cant-run-command-not-admin"})
     end
 end)
-

@@ -12,7 +12,6 @@ function night.init()
     global.night.is_night = false
 end
 
-
 function night.check_day_coming(player)
     local surface = player.surface
     local daytime = surface.daytime
@@ -37,7 +36,6 @@ function night.check_night_coming(player)
     local daytime = surface.daytime
     local day_length_ticks = surface.ticks_per_day
 
-
     global.night.count = math.floor(game.tick / day_length_ticks) + 1
     if daytime < global.night.dawn and daytime > global.night.dusk then
         if not global.night.is_new_night then
@@ -45,15 +43,16 @@ function night.check_night_coming(player)
             global.night.is_night = true
             global.ai.have_send_squad_this_night = false
             if global.ai.hard then
-                global.ai.night_squad_send_max = math.floor(global.night.count / 3)
+                global.ai.night_squad_send_max = math.floor(global.night.count / 1)
             else
-                global.ai.night_squad_send_max = math.floor(global.night.count / 5)
+                global.ai.night_squad_send_max = math.floor(global.night.count / 2)
             end
             global.ai.night_squad_send = 0
 
-
             if not player.gui.top.wn_gui.wn_night_coming then
-                local label = player.gui.top.wn_gui.add({type = "label", name = "wn_night_coming", caption = "Night %s"})
+                
+                local label = player.gui.top.wn_gui.add({type = "label", name = "wn_night_coming", caption = global.ai.mode .. "Night %s"})
+
 
                 if global.ai.is_peacemode then
                     label.style.font_color = {r=0.6, g=0.8, b=0.6}

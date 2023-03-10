@@ -21,6 +21,10 @@ function ai_test.init_gui(player)
     local btn_fac = frame.add{type="button", name="wn_ai_test_faction", caption="Factions"}
     local btn_set_fac = frame.add{type="button", name="wn_ai_test_set_faction", caption="Set Factions"}
     -- hide
+    local ipt_points = frame.add{type="textfield", name="wn_ai_test_ipt_points", text="1000"}
+    ipt_points.style.width = 80
+    local btn_set_fac = frame.add{type="button", name="wn_ai_test_set_points", caption="Set Points"}
+
     ai_test.hide_gui(player)
 
 end
@@ -37,6 +41,8 @@ function ai_test.show_gui(player)
     frame.wn_ai_test_attack.visible = true
     frame.wn_ai_test_faction.visible = true
     frame.wn_ai_test_set_faction.visible = true
+    frame.wn_ai_test_ipt_points.visible = true
+    frame.wn_ai_test_set_points.visible = true
 end
 function ai_test.hide_gui(player)
     local frame = player.gui.top.wn_gui.wn_ai_test
@@ -50,6 +56,8 @@ function ai_test.hide_gui(player)
     frame.wn_ai_test_attack.visible = false
     frame.wn_ai_test_faction.visible = false
     frame.wn_ai_test_set_faction.visible = false
+    frame.wn_ai_test_ipt_points.visible = false
+    frame.wn_ai_test_set_points.visible = false
 end
 
 function ai_test.update_gui(player)
@@ -124,6 +132,18 @@ function ai_test.on_gui_click(event)
 		for faction, tiers in pairs(factions) do
 			game.print(faction..", tiers:"..tiers.tierMin.."-"..tiers.tierMax)
 		end
+    elseif element.name == "wn_ai_test_set_points" then
+        local size = tonumber(player.gui.top.wn_gui.wn_ai_test.wn_ai_test_ipt_points.text)
+        if size then
+            local result = remote.call("rampantFixed", "setAI_points_ExtCtrl", {surfaceIndex = player.surface.index, points = size})
+            if result then
+                game.print("AI_points: ".. result )
+            else
+                game.print("non-rampant surface")
+            end
+        else
+            game.print("no size")
+        end
     elseif element.name == "wn_ai_test_set_faction" then
 		local parameters = {}
 		parameters.surfaceIndex = player.surface.index
@@ -149,10 +169,6 @@ function ai_test.on_gui_click(event)
 		end
     end
 end
-
-
-
-
 
 
 return ai_test

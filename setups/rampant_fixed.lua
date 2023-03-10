@@ -58,19 +58,24 @@ data.raw["double-setting"]["rampantFixed--unitHiveHealthScaler"].hidden = true
 data.raw["double-setting"]["rampantFixed--unitHiveHealingScaler"].hidden = true
 
 data.raw["string-setting"]["rampantFixed--aiDifficulty"].hidden = true
-data.raw["string-setting"]["rampantFixed--aiDifficulty"].allowed_values = {"Hard"}
-data.raw["string-setting"]["rampantFixed--aiDifficulty"].default_value = "Hard"
+data.raw["string-setting"]["rampantFixed--aiDifficulty"].allowed_values = {"Lite"}
+data.raw["string-setting"]["rampantFixed--aiDifficulty"].default_value = "Lite"
 
 data.raw["int-setting"]["rampantFixed--tierStart"].default_value = 1
 data.raw["int-setting"]["rampantFixed--tierStart"].allowed_values = {1}
 data.raw["int-setting"]["rampantFixed--tierStart"].hidden = true
 
-data.raw["int-setting"]["rampantFixed--tierEnd"].default_value = 7
-data.raw["int-setting"]["rampantFixed--tierEnd"].allowed_values = {7}
+data.raw["int-setting"]["rampantFixed--tierEnd"].default_value = 8
+data.raw["int-setting"]["rampantFixed--tierEnd"].allowed_values = {8}
 data.raw["int-setting"]["rampantFixed--tierEnd"].hidden = true
 
-data.raw["double-setting"]["rampantFixed--unitBiterHealthScaler"].default_value = 1.0
-data.raw["double-setting"]["rampantFixed--unitBiterHealthScaler"].allowed_values = {1.0, 1.5}
+data.raw["double-setting"]["rampantFixed--unitBiterHealthScaler"].default_value = 1.5
+data.raw["double-setting"]["rampantFixed--unitBiterHealthScaler"].allowed_values = {1.5, 3.0}
+data.raw["double-setting"]["rampantFixed--unitBiterDamageScaler"].default_value = 1.5
+data.raw["double-setting"]["rampantFixed--unitBiterDamageScaler"].allowed_values = {1.5}
+data.raw["double-setting"]["rampantFixed--unitSpitterHealthScaler"].default_value = 1.5
+data.raw["double-setting"]["rampantFixed--unitSpitterHealthScaler"].allowed_values = {1.5}
+
 data.raw["double-setting"]["rampantFixed--unitBiterHealthScaler"].order = "z0"
 data.raw["bool-setting"]["rampantFixed--poisonEnemy"].default_value = false
 data.raw["bool-setting"]["rampantFixed--poisonEnemy"].order = "z1"

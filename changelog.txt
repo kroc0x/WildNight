@@ -1,9 +1,18 @@
 ---------------------------------------------------------------------------------------------------
-Version: 0.5.3
-Date: 2023-03-08
+Version: 0.5.6
+Date: 2023-01-29
+  Changes:
+    - Decrease Night Attack Wave Strength in later game
+---------------------------------------------------------------------------------------------------
+Version: 0.5.5
+Date: 2023-01-29
+  Changes:
+    - Increase Enemy HP and Night Attack Wave
+---------------------------------------------------------------------------------------------------
+Version: 0.5.4
+Date: 2023-03-09
   Bugfixes:
-    - Fix the bug that settings does not take effect. Use Rampant's setting
-	instead.
+    - change AI difficulty to Lite to make easier gameplay
 ---------------------------------------------------------------------------------------------------
 Version: 0.5.2
 Date: 2023-03-08

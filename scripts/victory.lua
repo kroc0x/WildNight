@@ -1,30 +1,7 @@
 local victory = {}
 
 local function get_mode_str(player)
-    local is_hard = settings.startup["wn-hard"].value
-    local has_poison = settings.startup["wn-poison"].value
-    local has_inferno= settings.startup["wn-inferno"].value
-    local has_nuclear = settings.startup["wn-nuclear"].value
-
-    local mode_str = "Hard"
-    if not is_hard then
-        mode_str = ""
-    end
-
-    local biter_str = ""
-    if has_poison then
-        biter_str = biter_str .. " Poison"
-    end
-    if has_inferno then
-        biter_str = biter_str .. " Inferno"
-    end
-    if has_nuclear then
-        biter_str = biter_str .. " Nuclear"
-    end
-
-    local final_str = mode_str .. biter_str
-
-    return final_str
+    return global.ai.mode_str
 end
 
 local function get_kill_infos(player)

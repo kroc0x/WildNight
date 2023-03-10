@@ -10,6 +10,9 @@ Rocket Rush mode is recommended. If playing in regular mode, the difficulty of t
 
 In RocketRush mode, the gameplay duration is about 5 hours.
 
+Gameplay Mix Cut: https://youtu.be/WLqRpNRN5zE
+intro video(Chinese): https://www.youtube.com/watch?v=NqDU1JMjA-8
+
 ## Main Function
 
 Once you enter the initial room of RocketRush, you will be able to convert 10,000 gold into an initial resource presets via the quick button in the upper left corner. 
@@ -57,6 +60,7 @@ poison enemies, fire enemies, and nuclear enemies in RampantFixed are turned off
 
 ## Options
 Single Option to turn on the poison enemies, fire enemies, and nuclear enemies.
+Should change the actual RampantFixed Option
 Hard mode: biters have more health and attacks more often
 
 
@@ -130,5 +134,5 @@ Larger Lamps: 光照范围更大的灯光
 默认关闭了RampantFixed中的毒液虫，火焰虫，核爆虫
 
 ## 模组可选项
-毒液虫，火焰虫，核爆虫的开启选项。
-高难选项：该模式下，虫群的进攻会更频繁，并且所有虫群会获得大幅度的血量加成
+毒液虫，火焰虫，核爆虫的开启选项。(需要更改RampantFixed的选项)
+高难选项：该模式下，虫群的进攻会更频繁

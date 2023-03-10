@@ -10,6 +10,7 @@ function easy_pickup.init()
     
     global.easy_pickup = {}
     global.easy_pickup.has_picked = false
+    global.easy_pickup.has_given = false
 
 end
 
@@ -20,6 +21,8 @@ function easy_pickup.init_gui(player)
         button.style.font = "default-bold"
         button.style.minimal_height = 30
         button.style.minimal_width = 140
+
+        player.remove_item({name = "piercing-rounds-magazine", count = 100})
     end
 end
 
@@ -56,7 +59,6 @@ function easy_pickup.easy_pickup(player)
         player.insert({name = "heavy-oil-barrel", count = 30})
         player.insert({name = "gun-turret", count = 10})
         player.insert({name = "rifle-magazine", count = 200})
-        player.insert({name = "defender-capsule", count = 10})
         player.insert({name = "small-lamp", count = 5})
         player.insert({name = "dt-fuel", count = 1})
         player.insert({name = "cliff-explosives", count = 5})
