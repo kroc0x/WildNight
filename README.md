@@ -83,14 +83,8 @@ Special thanks to Dimm2101(RampantFixed) Mod Creator for creating the AI remote 
 
 在RocketRush模式下， 游戏时长约为5小时。
 
-依赖模组：
-Krastorio2
-RampantFixed
-
-其他可选模组：
-Jetpack： 喷气背包，方便行动
-Larger Lamps: 光照范围更大的灯光
-
+剪辑: https://youtu.be/WLqRpNRN5zE
+简介: https://www.youtube.com/watch?v=NqDU1JMjA-8
 
 ## 模组主要功能
 进入RocketRush的初始房间后，将可以通过左上角快速按钮将10000金币转换为一套初始资源配置，
@@ -136,3 +130,11 @@ Larger Lamps: 光照范围更大的灯光
 ## 模组可选项
 毒液虫，火焰虫，核爆虫的开启选项。(需要更改RampantFixed的选项)
 高难选项：该模式下，虫群的进攻会更频繁
+
+依赖模组：
+Krastorio2
+RampantFixed
+
+其他可选模组：
+Jetpack： 喷气背包，方便行动
+Larger Lamps: 光照范围更大的灯光
